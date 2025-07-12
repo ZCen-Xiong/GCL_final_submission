@@ -1,5 +1,4 @@
-from datasets import load_dataset
-from torchvision import transforms
+#37257015 XIONGZICEN 20250712
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -8,6 +7,9 @@ import matplotlib.pyplot as plt
 import os
 import argparse
 import time
+from torchvision import transforms
+from datasets import load_dataset
+from torch.utils.data import TensorDataset, DataLoader
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 
 parser = argparse.ArgumentParser(description='Train DNN for waste classification')
@@ -63,7 +65,6 @@ y_train = y_train.to(device)
 X_test = X_test.to(device)
 y_test = y_test.to(device)
 
-from torch.utils.data import TensorDataset, DataLoader
 train_loader = DataLoader(TensorDataset(X_train, y_train), batch_size=32, shuffle=True)    # Batch size: 32
 test_loader  = DataLoader(TensorDataset(X_test, y_test), batch_size=32, shuffle=False)
 

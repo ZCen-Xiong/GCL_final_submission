@@ -1,15 +1,16 @@
+#37257015 XIONGZICEN 20250712
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 import argparse
 import time
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import TensorDataset, DataLoader
-from datasets import load_dataset
 from torchvision import transforms
+from datasets import load_dataset
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 
 parser = argparse.ArgumentParser(description='Train CNN for waste classification')
 parser.add_argument('--epochs', type=int, default=5, help='Number of training epochs (default: 5)')
